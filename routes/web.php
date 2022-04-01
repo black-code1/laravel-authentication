@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (){
-    return 'Welcome Page';
-});
+// Route::get('/', function (){
+//     return 'Welcome Page';
+// });
+
+Route::get('/', 'App\Http\Controllers\PlaceholderAPIController@index');
 
 //afficher les livres, pour afficher les formulaire d'ajoute, l'ajout d'un livre (POST), formulaire d'edition, editer un livre (PUT/PATCH), supprimer un livre (DELETE)
 
