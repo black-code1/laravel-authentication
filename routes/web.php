@@ -14,25 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    $post = Post::find(1);
-    // $post->delete();
-    $post->forceDelete();
-
-    // Post::where('id',1)->get();
-
-    // dd($post);
-    $posts = Post::all();
-
-    // $posts = Post::withTrashed()->where('id',1)->get();
-    // $posts = Post::withTrashed()->where('id',1)->restore();
-
-    // dd($posts);
-    // dd(Post::where('id',1)->get());
-    
-    return view('welcome', compact('posts'));
+Route::get('/', function (){
+    return 'Welcome Page';
 });
+
+Route::resource('posts', '\App\Http\Controllers\PostController');
 
 
 Route::middleware(['admin'])->group(function(){
