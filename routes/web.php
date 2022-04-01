@@ -1,5 +1,6 @@
 <?php
 
+// use App\Http\Controllers\BookController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (){
     return 'Welcome Page';
 });
+
+//afficher les livres, pour afficher les formulaire d'ajoute, l'ajout d'un livre (POST), formulaire d'edition, editer un livre (PUT/PATCH), supprimer un livre (DELETE)
+
+// Route::resource('book', 'App\Http\Controllers\BookController')->except(['destroy','edit','update']);
+// Route::resource('book', 'App\Http\Controllers\BookController')->only(['destroy','edit','update']);
+
+
 
 Route::resource('posts', '\App\Http\Controllers\PostController');
 
