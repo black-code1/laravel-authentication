@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\BookController;
+
+use App\Http\Controllers\PaymentController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +32,7 @@ Route::get('/', 'App\Http\Controllers\PlaceholderAPIController@index');
 
 Route::resource('posts', '\App\Http\Controllers\PostController');
 
+Route::resource('paiements',PaymentController::class);
 
 Route::middleware(['admin'])->group(function(){
     Route::get('/foo', '\App\Http\Controllers\TestController@foo');
